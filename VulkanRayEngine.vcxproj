@@ -24,6 +24,7 @@
     <ProjectGuid>{17da106a-3ef4-47e6-8d6a-364316d8b96c}</ProjectGuid>
     <RootNamespace>VulkanRayEngine</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>VulkanSDL2Engine</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
