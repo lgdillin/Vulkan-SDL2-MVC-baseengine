@@ -42,7 +42,7 @@ int main(int argc, char *argv[]) {
 	Controller controller(game);
 
 
-	View view(game);
+	View view(game, controller);
 	view.initialize();
 
 	game.initialize();
@@ -55,7 +55,13 @@ int main(int argc, char *argv[]) {
 	while (!quit) {
 		frameStart = SDL_GetTicks();
 
-		// updating
+		// collect user input
+		controller.update();
+
+		// update data model/compute physics
+		game.update();
+
+		// update the screen
 		view.repaint();
 
 		calculateFPS(&view);
