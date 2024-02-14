@@ -1,0 +1,11 @@
+Note:
+This Visual Studio project comes with the pre-configured solution file. your /include/ and /Libs/ folder will need to go into the /deps/ folder in the base directory.
+You can get these folders from your VulkanSDK folder from your install.  Also, whether your are building in Debug or Release mode, you will need to make sure that 
+the SDL2.dll is in the same folder as whatever .exe you have generated (SDL2.dll is included in this project)
+
+
+This is meant to be a base engine start for any further development using Vulkan and SDL2.  The organization of the code follows the classic Model-View-Controller layout of software engineering, where data flows from the controller (user input) ==> to update the data model (Game) along with physics calculations ==> the data model is then read by the View and used to update and draw to the screen.  Since the purpose of this engine is to fill out much of the boilerplate code for Vulkan/SDL2, there is not much to this project in its form outside of the View class.
+
+If you download the project and run it, you will see a simple triangle on the screen.  The triangle is hardcoded in the in shader.  There exists a folder that comes with a simple batch file which can run and compile your .vert and .frag shaders to their corresponding SPIR-V shaders. 
+
+Everything Vulkan is compacted into the View class, with the exception of the Pipeline Builder, because the code for that is so large i decided that would the breaking point to finally place some code in another class (View class is already so large because of vulkan) however i don't like the conventional layouts of Vulkan projects/tutorials where there are 40 files all with 50 or so lines of code, especially since most of the code is all boilerplate.  My personal justification is that I've seen so many tutorials on Vulkan, and many of them all end up producing more or less the same code, so if you need to chop certain pieces of code out into your own file for your own usage, go for it.  I personally don't believe in premature optimization, nor premature modularity
